@@ -1,52 +1,67 @@
-# Extension Project Template
+# USD File Attribute Standardizer
 
-This project was automatically generated.
+A simple Omniverse extension for managing and standardizing USD file attributes like **units** and **up axis**. This tool makes it easy to modify these settings across multiple files, ensuring consistent results when combining assets from different programs such as SketchUp, CityEngine, Blender, and NVIDIA’s assets.
 
-- `app` - It is a folder link to the location of your *Omniverse Kit* based app.
-- `exts` - It is a folder where you can add new extensions. It was automatically added to extension search path. (Extension Manager -> Gear Icon -> Extension Search Path).
+## Why This Tool?
 
-Open this folder using Visual Studio Code. It will suggest you to install few extensions that will make python experience better.
+When working with USD files from different applications, the units and up axis often vary, leading to unintended results when combining or layering these assets. This extension provides a straightforward way to:
 
-Look for "hlplanning.usd.scaleupaxis" extension in extension manager and enable it. Try applying changes to any python files, it will hot-reload and you can observe results immediately.
+- **Set the Up Axis** (Y or Z)
+- **Define Units in Meters per Unit**
 
-Alternatively, you can launch your app from console with this folder added to search path and your extension enabled, e.g.:
+By standardizing these attributes, you can ensure your files align consistently in Omniverse, avoiding misalignments and scaling issues.
 
-```
-> app\omni.code.bat --ext-folder exts --enable company.hello.world
-```
+## Features
 
-# App Link Setup
+- **Select USD File**: Quickly browse and select any USD file you want to standardize.
+- **View and Set Attributes**:
+    - **Up Axis**: Choose between "Y" or "Z" axis orientation.
+    - **Units**: Define the units in meters to ensure consistent scaling.
+- **Apply Changes**: Save your changes to the USD file directly.
+- **Clear Selection**: Reset the UI to make new selections.
 
-If `app` folder link doesn't exist or broken it can be created again. For better developer experience it is recommended to create a folder link named `app` to the *Omniverse Kit* app installed from *Omniverse Launcher*. Convenience script to use is included.
+## Installation
 
-Run:
+1. Clone this repository into your Omniverse extensions folder:
+    
+    bash
+    
+    Copy code
+    
+    `git clone https://github.com/yourusername/USD-File-Attribute-Standardizer.git`
+    
+2. Enable the extension in the Omniverse Kit Extensions Manager.
+    
 
-```
-> link_app.bat
-```
+## Usage
 
-If successful you should see `app` folder link in the root of this repo.
+1. **Open the Extension**:
+    
+    - In Omniverse, navigate to the extension panel and launch the "USD File Attribute Standardizer."
+2. **Select a USD File**:
+    
+    - Click the **"Select USD"** button to open a file picker dialog.
+    - Choose the USD file you want to standardize. The file name and its current attributes (Up Axis and Units) will display in the UI.
+3. **Modify Attributes**:
+    
+    - **Up Axis**: Use the dropdown to select either **"Y"** or **"Z"**.
+    - **Units**: Enter the desired units in meters per unit.
+4. **Apply Changes**:
+    
+    - Click **"Apply Changes"** to save the modifications directly to the USD file.
+    - The UI will confirm when changes have been successfully applied.
+5. **Clear Selection**:
+    
+    - Use the **"Clear File"** button to reset the extension, allowing for a new file selection.
 
-If multiple Omniverse apps is installed script will select recommended one. Or you can explicitly pass an app:
+## Example Use Case
 
-```
-> link_app.bat --app create
-```
+If you’re merging assets from **SketchUp** (typically using Y-Up) and **Blender** (which may use Z-Up), you can use this extension to quickly align the up axis and units, ensuring all files match the same orientation and scale before integration.
 
-You can also just pass a path to create link to:
+## Contributing
 
-```
-> link_app.bat --path "C:/Users/bob/AppData/Local/ov/pkg/create-2021.3.4"
-```
+Contributions are welcome! Please submit issues and pull requests to help improve this tool.
 
+## License
 
-# Sharing Your Extensions
-
-This folder is ready to be pushed to any git repository. Once pushed direct link to a git repository can be added to *Omniverse Kit* extension search paths.
-
-Link might look like this: `git://github.com/[user]/[your_repo].git?branch=main&dir=exts`
-
-Notice `exts` is repo subfolder with extensions. More information can be found in "Git URL as Extension Search Paths" section of developers manual.
-
-To add a link to your *Omniverse Kit* based app go into: Extension Manager -> Gear Icon -> Extension Search Path
-
+This project is licensed under the MIT License. See the LICENSE file for more information.

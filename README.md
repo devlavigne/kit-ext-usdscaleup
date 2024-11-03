@@ -24,11 +24,9 @@ By standardizing these attributes, you can ensure your files align consistently 
 
 1. Clone this repository into your Omniverse extensions folder:
     
-    bash
-    
-    Copy code
-    
+    ```console   
     `git clone https://github.com/yourusername/USD-File-Attribute-Standardizer.git`
+    ```
     
 2. Enable the extension in the Omniverse Kit Extensions Manager.
     
